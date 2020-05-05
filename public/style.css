@@ -1,0 +1,426 @@
+* {
+    font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+    background: whitesmoke;
+	margin-top: 40px;
+	margin-left: 50px;
+}
+
+#hidden_h1{
+	display: none;
+}
+
+
+
+
+.blocks{
+	display: flex;
+	width: 100%;
+	height: 20%;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.blocks:nth-child(2){
+	text-align: center;
+	font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+#numberDice{
+	font-size: 50px;
+	text-align: center;
+	width: 27%;
+}
+
+#block1{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+    width: 20%;
+}
+
+#turn{
+	text-align: center;
+	font-size: 24px;
+}
+
+.front_img{
+    pointer-events: none;
+}
+
+button:hover{cursor: pointer;}
+
+.btn_red, .btn_green, .choice{
+	color: white;
+	text-decoration: none;
+	background: rgb(212,75,56);
+	padding: 15px 0px;
+	border-radius: 12px;
+	text-align: center;
+	border: 0;
+	font-size: 18px;
+	width: 60%;
+	margin: 10px;
+}
+.btn_red:hover { background: rgb(232,95,76); }
+.btn_red:active { background: rgb(152,15,0); }
+
+#btn_red_large{
+	width: 100%;
+}
+
+.btn_green{
+	background: rgb(64,199,129);
+}
+
+.btn_green:hover { background: rgb(53, 167, 110);}
+.btn_green:active { background: rgb(33,147,90); }
+
+.choice{
+	background: #0e8bb8;
+	height: 95%;
+	width: 30%;
+	margin: 10% 0;
+	font-size: 17px;
+}
+
+.choice:hover { background: rgb(34, 159, 204); cursor: pointer;} 
+.choice:nth-child(1):hover #divHoverRoad{display:block;}
+.choice:nth-child(2):hover #divHoverVillage{display:block;}
+.choice:nth-child(3):hover #divHoverCity{display:block;}
+
+ .active { background: #0A5E7D; }
+ .active:hover { background: #0A5E7D;} 
+ .notactive { background: #0e8bb8; }
+
+.sign{
+	font-size: 17px;
+	margin-top: 8px;
+}
+
+.tradeMaterials{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+#trade{
+	position: absolute;
+    top: 37%;
+    left: 795px;
+	background: rgb(204, 225, 225);
+	width: 700px;
+	height: 290px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	z-index: 45;
+	display: none;
+}
+
+#tableInfo{
+	width: 70%;
+	height: 100%;
+}
+
+.tableTdInfo{
+	width: 40%;
+	margin: 0 30px;
+    text-align: center;
+}
+
+.column2, .column4{
+	width: 100px;
+    padding: 10px;
+}
+
+.column1{
+    text-align: left;
+}
+
+ul{
+	list-style:none;
+}
+
+#tableTrade{
+	height: 75%;
+	width: 100%;
+	z-index: 50;
+}
+
+.alignCenter{
+	margin: 0 auto; /*центрируем элемент по горизонтали в пределах родительского блока*/
+}
+
+.tdTrade {
+	text-align: center;
+	font-size: 18px;
+	height: 90px;
+	top: 0;
+    left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.textBold{
+	font-weight: bold;
+}
+
+.mat > img, .mat2 > img{
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+
+.activeMat, .activeMat2{
+	border-bottom: 2px solid red;
+}
+
+#divHoverRoad, #divHoverVillage, #divHoverCity{
+	position:absolute;
+    padding:5px;
+    display:none;
+}
+
+#divHoverRoad{
+    left: 80px;
+    top:260px;
+}
+
+#divHoverVillage{
+    left:278px;
+    top:260px;
+}
+
+#divHoverCity{
+    left:492px;
+    top:260px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ♠ ♤ ♥ ♡ ♣ ♧ ♦ ♢ */
+
+.hand { /* рука игрока */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 600px;
+    width: 500px;
+}
+
+.card { /* карта */
+    display: flex;
+    flex-direction: column;
+    font-weight: light;
+    font-size: 20px;
+    margin: 5px;
+    max-width: 80px;
+    height: 110px;
+    border-radius: 7px;
+    justify-content: center;
+    padding: 10px 5px 10px 5px;
+}
+
+.card-name-bot { /* нижняя подпись */
+    align-self: flex-end;
+    transform: rotate(180deg);
+}
+
+.suit { /* масть */
+    align-self: center;
+    font-size: 60px;
+}
+
+.red-card { /* карта с красной мастью */
+    background-color: black;
+    border: 5px solid black;
+    color: crimson;
+}
+
+.card.red-card:hover {
+    border: 5px solid crimson;
+    cursor: pointer;
+}
+
+.black-card { /* карта с черной мастью */
+    background-color: crimson;
+    border: 5px solid crimson;
+    color: black;
+}
+
+.card.black-card:hover {
+    border: 5px solid black;
+    cursor: pointer;
+}
+
+.back-card { /* рубашка */
+    background-image: linear-gradient(225deg, crimson -20px, black);
+    border: 5px solid black;
+}
+
+.card2 { /* подложка для текущей масти и игровой колоды*/
+    display: flex;
+    font-weight: light;
+    font-size: 20px;
+    margin: 5px;
+    width: 80px;
+    height: 110px;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px 10px 5px;
+}
+
+.card3 { /* подложка для колоды сброса */
+    display: flex;
+    flex-direction: column;
+    font-weight: light;
+    font-size: 20px;
+    margin: 5px;
+    width: 80px;
+    height: 110px;
+    border-radius: 7px;
+    justify-content: center;
+    padding: 10px 5px 10px 5px;
+}
+
+.card2.back-card:hover {
+    border: 5px solid crimson;
+    cursor: pointer;
+}
+
+.table { /* стол */
+    display: flex;
+    background-color: lightgray;
+    width: 1300px;
+    height: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 600px;
+}
+
+h2 {
+    font-size: 17px;
+    font-weight: 200;
+    margin-bottom: 8px;
+    margin-top: 0px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+strong {
+    color: crimson;
+    font-weight: lighter;
+}
+
+.back-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px 30px 0px;
+    width: 500px;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin: auto;
+}
+
+.back-menu > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 60px;
+    font-size: 17px;
+}
+
+.href-button, button {
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 7px;
+    padding: 5px;
+    color: crimson;
+    font-size: 17px;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 5px solid crimson;
+}
+
+.cntr {
+    justify-content: center;
+}
+
+.alert {
+    margin-top: 15px;
+    height: 50px;
+    border-radius: 7px;
+    color: white
+}
+
+.bkgreen {
+    background-color: darkgreen;
+}
+
+.bkred {
+    background-color: crimson;
+}
+
+.id_games:hover {
+    cursor: pointer;
+    color: crimson;
+}
+
+.but-play {
+    margin-top: 20px;
+}

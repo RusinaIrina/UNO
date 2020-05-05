@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+	    <meta charset="utf-8">
+		<title>Японский дурак</title>
+		
+		<link rel="stylesheet" href="style.css">
+    </head> 
+	
+	<main class="waiting">
+		<h2>Подождите подключения следующего игрока</h2>
+	</main>
+	
+	<main class="game" hidden>
+		<h1 id = "hidden_h1">Игра «Японский дурак»</h1>
+		<div class="table">
+            <div class="hand"></div>
+            
+            <div class="middle">                
+                <section>
+                    <h2>Колода сброса:</h2>
+                    <div id="discard-card"></div>
+                </section>
+
+                <section>
+                    <h2>Игровая колода:</h2>
+                    <div class="card2 back-card" id="play-cards"></div>
+                </section>
+
+				<button id="endTurn">Завершить ход</button>
+				<div class="but-play">
+					<button id="btn_red_large">Сдаться</button>
+				</div>
+            </div>
+
+            <div class="hand"></div>
+        </div>
+	</main>
+	
+	<main class="result" hidden>
+		<h2>Игра закончена</h2>
+		<p>Игра прервана</p>
+		<button class="restart">Перезапустить</button>
+	</main>
+	
+	<script type="module" src="scripts/index.js"></script>
+</html>
